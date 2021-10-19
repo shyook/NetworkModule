@@ -40,6 +40,10 @@
                             <constraint firstItem="vUn-y0-OE0" firstAttribute="height" secondItem="MD0-kA-Iw4" secondAttribute="height" multiplier="2:5" id="gGq-vW-tm9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="apiTestTableView" destination="MD0-kA-Iw4" id="exe-bv-EEq"/>
+                        <outlet property="displayLabel" destination="vUn-y0-OE0" id="uBO-Mr-xaD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

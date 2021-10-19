@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="ApiTableViewCell" customModule="NetworkModule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj8-60-7ML">
+                        <rect key="frame" x="7" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="9Ys-wj-SbT"/>
+                            <constraint firstAttribute="width" constant="20" id="gFk-DS-7lJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="api name api name api name api name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQP-iq-Jst">
+                        <rect key="frame" x="37" y="14.5" width="277.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성공" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-Yd-OG8">
+                        <rect key="frame" x="334.5" y="14.5" width="29.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Wop-Yd-OG8" firstAttribute="centerY" secondItem="gj8-60-7ML" secondAttribute="centerY" id="3OG-7H-exW"/>
+                    <constraint firstAttribute="trailing" secondItem="Wop-Yd-OG8" secondAttribute="trailing" constant="7" id="EhL-O1-VIW"/>
+                    <constraint firstItem="Wop-Yd-OG8" firstAttribute="leading" secondItem="EQP-iq-Jst" secondAttribute="trailing" constant="20" id="RNI-cU-SxR"/>
+                    <constraint firstItem="EQP-iq-Jst" firstAttribute="centerY" secondItem="gj8-60-7ML" secondAttribute="centerY" id="ZDf-Y7-rRm"/>
+                    <constraint firstItem="gj8-60-7ML" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="e81-Mu-yFy"/>
+                    <constraint firstItem="EQP-iq-Jst" firstAttribute="leading" secondItem="gj8-60-7ML" secondAttribute="trailing" constant="10" id="nS2-v1-V4u"/>
+                    <constraint firstItem="gj8-60-7ML" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="z9X-oF-qsC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="apiImgUrl" destination="gj8-60-7ML" id="aQX-Nf-uJK"/>
+                <outlet property="apiName" destination="EQP-iq-Jst" id="BfM-IN-7fj"/>
+                <outlet property="apiTestResult" destination="Wop-Yd-OG8" id="qxm-c2-TTA"/>
+            </connections>
+            <point key="canvasLocation" x="71.739130434782609" y="108.14732142857143"/>
+        </tableViewCell>
+    </objects>
+</document>
