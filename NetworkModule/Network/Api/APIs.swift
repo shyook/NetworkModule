@@ -7,10 +7,23 @@
 
 import Alamofire
 
-enum APIs: URLRequestConvertible {
+enum APIs: URLRequestConvertible, CaseIterable {
+    static var allCases: [APIs] {
+        return [.session(P01: ""), .login(P01: "", P02: "")]
+    }
+    
     
     case session(P01: String)
     case login(P01: String, P02: String)
+    
+    var name: String {
+        switch self {
+        case .session:
+            return "session"
+        case .login:
+            return "login"
+        }
+    }
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {

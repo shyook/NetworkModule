@@ -46,18 +46,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - Data Setting
     private func setData() {
         apis = Array<ApiListData>()
-        for i in 0..<10 {
+        for api in APIs.allCases {
             let testData = ApiListData()
-            testData.apiImgUrl = "api icon image \(i)"
-            testData.apiDescription = "api number \(i)"
+            testData.apiImgUrl = "api icon image"
+            testData.apiDescription = api.name
             testData.isSuccess = true
-            if i % 2 == 0 {
-                testData.isSuccess = false
-            }
-            
+            apis?.append(testData)
         }
+        apiTestTableView.reloadData()
     }
-
-
 }
 
