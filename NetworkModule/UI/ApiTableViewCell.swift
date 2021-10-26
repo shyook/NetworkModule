@@ -33,9 +33,13 @@ class ApiTableViewCell: UITableViewCell {
             }
             
             apiName.text = data.apiDescription
-            apiTestResult.text = "실패"
-            if let success = data.isSuccess, success {
-                apiTestResult.text = "성공"
+            if let success = data.isSuccess {
+                apiTestResult.text = "실패"
+                if success {
+                    apiTestResult.text = "성공"
+                }
+            } else {
+                apiTestResult.text = ""
             }
         }
     }

@@ -43,6 +43,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let apiRequest = APIs.allCases[indexPath.row]
+        
+        switch apiRequest.name {
+        case "session":
+            APIRequest.session() { result in
+                switch result {
+                case .success(let sessionResult):
+                    if sessionResult.header?.code == ServerCode.success.rawValue {
+                        self.apis?[indexPath.row].isSuccess = true
+                        self.displayLabel.text = sessionResult.sessionBody?.encKey
+                    } else {
+                        self.apis?[indexPath.row].isSuccess = false
+                    }
+                case .failure(_ ):
+                    self.apis?[indexPath.row].isSuccess = false
+                }
+                self.apiTestTableView.reloadData()
+            }
+        case "login":
+                APIRequest.login(id: "id", password: "pass") { result in
+                    switch result {
+                    case .success(let loginResult):
+                        if loginResult.header?.code == ServerCode.success.rawValue {
+                            self.apis?[indexPath.row].isSuccess = true
+                        } else {
+                            self.apis?[indexPath.row].isSuccess = false
+                        }
+                    case .failure(_ ):
+                        self.apis?[indexPath.row].isSuccess = false
+                    }
+                    self.apiTestTableView.reloadData()
+                }
+        default:
+            break
+        }
+        
+    }
+    
     // MARK: - Data Setting
     private func setData() {
         apis = Array<ApiListData>()
@@ -50,7 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let testData = ApiListData()
             testData.apiImgUrl = "api icon image"
             testData.apiDescription = api.name
-            testData.isSuccess = true
+            testData.isSuccess = nil
             apis?.append(testData)
         }
         apiTestTableView.reloadData()

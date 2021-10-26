@@ -32,3 +32,8 @@ enum HTTPHeaderField: String {
 enum ContentType: String {
     case json = "application/json"
 }
+
+enum ServerCode: String {
+    case success = "10000"
+    case sessionTimeout = "22002"
+}

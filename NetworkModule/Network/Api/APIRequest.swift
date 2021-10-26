@@ -15,38 +15,17 @@ class APIRequest {
             print(response.debugDescription)
         }
     }
-    //        return AF.request(route).responseDecodable (decoder: decoder) {
-    //            (response: DataResponse<T, AFError>) in
-    //
-    //            print(response.debugDescription)
-    //            // TODO - 상속을 통해 header의 세션 만료를 한군데서 처리 가능하도록 하던지 모든 api에서 처리 필요.
-    //            switch response.result {
-    //            case .success(let response):
-    //                if let header = try? (response as? ResponseHeaderProtocol)?.getResponseHeader() {
-    //                    if header.Code == ServerCode.sessionTimeout.rawValue {
-    //                        if !isShownAuthErrPopup {
-    //                            isShownAuthErrPopup = true
-    //                            CommonPopupType1_2.showSessionClose({
-    //                                isShownAuthErrPopup = false
-    //                            })
-    //                        }
-    //                        return
-    //                    }
-    //                }
-    //            case .failure( _):
-    //                break
-    //            }
-    //            completion(response.result)
-    //        }
-    //    }
     
-    /**
-     세션 요청 암호화 key 수취 (3.1.1)
+    /*
+     세션 요청 API (Get 방식)
      */
     static func session(completion: @escaping (Result<ResponseSession, AFError>) -> Void) {
         performRequest(route: APIs.session(P01: UUID().uuidString.replacingOccurrences(of: "-", with: "")), completion: completion)
     }
     
+    /*
+     로그인 요청 API (Post 방식)
+     */
     static func login(id: String, password: String, completion: @escaping (Result<ResponseBase, AFError>) -> Void) {
         performRequest(route: APIs.login(P01: id, P02: password), completion: completion)
     }
@@ -88,6 +67,5 @@ extension DataResponse {
         return ""
         #endif
     }
-    
 }
 
