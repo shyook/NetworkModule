@@ -21,4 +21,4 @@ API 추가가 쉽고 변경이 용이하며 API추가나 변경에 따른 다른
 - Codable Protocol을 이용한 Josn 파싱
 - Post Method를 이용한 데이터 전송
 - Get Method를 이용한 데이터 획득
-- 공통 모듈을 이용한 에러 
+- 공통 모듈을 이용한 에러 처리
